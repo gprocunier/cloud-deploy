@@ -14,10 +14,10 @@ application: apache
 # machine_type: t2.medium
 # ec2_image_id: ami-02eac2c0129f6376b #Centos7
 # ec2_image_id: ami-07ebfd5b3428b6f4d #Ubuntu 18.04
-ec2_image_id: ami-098f16afa9edf40be #RHEL 8
+ec2_image_id: ami-04312317b9c8c4b51 #RHEL 8
 ec2_wait: yes #wait for newly created instances to reach desired state before returning
-ec2_vpc_subnet: "172.31.32.0/20"
-ec2_vpc_cidr: "172.31.0.0/16"
+ec2_vpc_cidr: 192.168.0.0/24
+ec2_vpc_subnet: 192.168.0.0/28
 ec2_root_volume_size: 10
 from_snow: false
 aws_instance_username: ec2-user
