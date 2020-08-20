@@ -31,7 +31,7 @@
           region: "{{ ec2_region }}"
           filters:
             "tag:application": "{{ application }}"
-            "tag:provisioner": "mford"
+            "tag:provisioner": "elisdondemo"
             "instance-state-name": "running"
         register: instance_info
 
@@ -49,7 +49,7 @@
           region: "{{ ec2_region }}"
           filters:
             "tag:application": "{{ application }}"
-            "tag:provisioner": "mford"
+            "tag:provisioner": "elisdondemo"
         register: route_table_info
 
       # - debug:
