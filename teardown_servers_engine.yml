@@ -26,7 +26,7 @@
       ec2_instance_info:
         filters:
           "tag:application": "{{ application }}"
-          "tag:provisioner": "mford"
+          "tag:provisioner": "elisdondemo"
           instance-state-name: [ "running", "shutting-down", "stopping", "stopped" ]
       register: instance_info
 
