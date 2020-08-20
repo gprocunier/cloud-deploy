@@ -74,7 +74,7 @@
         name: "{{ ec2_prefix }}-vpc"
         cidr_block: "{{ ec2_vpc_cidr }}"
         tags:
-          provisioner: mford
+          provisioner: elisdondemo
           demo: ami_copy
       register: create_vpc
 
@@ -86,7 +86,7 @@
         description: "Application VPC for {{ ec2_prefix }}"
         vpc_id: "{{create_vpc.vpc.id}}"
         tags:
-          provisioner: mford
+          provisioner: elisdondemo
           Name: "{{ ec2_prefix }}-sg"
           demo: ami_copy
         rules:
@@ -111,7 +111,7 @@
         map_public: yes
         cidr: "{{ ec2_vpc_subnet }}"
         tags:
-          provisioner: mford
+          provisioner: elisdondemo
           demo: ami_copy
       register: create_subnet
 
@@ -125,7 +125,7 @@
         region: "{{ ec2_dest_region }}"
         vpc_id: "{{ create_vpc.vpc.id }}"
         tags:
-          provisioner: mford
+          provisioner: elisdondemo
           demo: ami_copy
       register: igw
 
@@ -140,7 +140,7 @@
           - dest: 0.0.0.0/0
             gateway_id: "{{ igw.gateway_id }}"
         tags:
-          provisioner: mford
+          provisioner: elisdondemo
           demo: ami_copy
 
     - name: Set Machine Type to Micro
@@ -186,7 +186,7 @@
         region: "{{ ec2_dest_region }}"
         filters:
           "tag:demo": "ami_copy"
-          "tag:provisioner": "mford"
+          "tag:provisioner": "elisdondemo"
       register: subnet_info
 
     # - debug:
@@ -204,7 +204,7 @@
         wait: "{{ ec2_wait }}"
         vpc_subnet_id: "{{ subnet_info.subnets[0].id }}"
         instance_tags:
-          provisioner: mford
+          provisioner: elisdondemo
           demo: ami_copy
         volumes:
           - device_name: "{{ ec2_root_volume_name }}"
