@@ -1,7 +1,4 @@
----
-- debug:
-    var: groups
-    
+---   
 - block:
   - name: Wait for instances to be reachable
     wait_for_connection:
