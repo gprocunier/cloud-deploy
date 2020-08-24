@@ -70,7 +70,7 @@
       register: change_request_status
       when: from_snow|bool
       until: change_request_status.record[0].state == "-2"
-      retries: 50
+      retries: 60
       delay: 10
 
     - debug:
