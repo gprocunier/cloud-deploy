@@ -1,6 +1,6 @@
 ---
 - debug:
-    var: groups[tag_cloud_provider_aws]
+    var: groups
     
 - block:
   - name: Wait for instances to be reachable
