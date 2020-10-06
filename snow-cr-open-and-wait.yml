@@ -18,7 +18,7 @@
         state: present
         data:
           short_description: "Ansible Automation Demo"
-          description: '{{ cr_description | default("Ansible Automation Demo") }}'
+          description: '{{ cr_description | default("Ansible Automation Demo") }} + {{ bundle | to_nice_yaml }}'
           severity: 3
           priority: 2
           assignment_group: "CAB Approval"
