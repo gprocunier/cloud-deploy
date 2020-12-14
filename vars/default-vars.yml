@@ -5,7 +5,7 @@ working_dir: /tmp
 #acceptable options: aws, gcp
 cloud_provider: aws
 num_instances: 3
-approver_email: elisdondemo@gmail.com
+approver_email: temporal.network.demo@gmail.com
 
 #AWS parameters
 ec2_region: us-east-1
