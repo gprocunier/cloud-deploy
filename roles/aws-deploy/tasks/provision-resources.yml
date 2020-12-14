@@ -5,7 +5,7 @@
     name: "{{ ec2_prefix }}-vpc"
     cidr_block: "{{ ec2_vpc_cidr }}"
     tags:
-      provisioner: elisdondemo
+      provisioner: temporal
       application: "{{ application }}"
       demo: appdeployment
   register: create_vpc
@@ -18,7 +18,7 @@
     description: "Application VPC for {{ ec2_prefix }}"
     vpc_id: "{{create_vpc.vpc.id}}"
     tags:
-      provisioner: elisdondemo
+      provisioner: temporal
       Name: "{{ ec2_prefix }}-sg"
       application: "{{ application }}"
       demo: appdeployment
@@ -52,7 +52,7 @@
     map_public: yes
     cidr: "{{ ec2_vpc_subnet }}"
     tags:
-      provisioner: elisdondemo
+      provisioner: temporal
       application: "{{ application }}"
       demo: appdeployment
   register: create_subnet
@@ -67,7 +67,7 @@
     region: "{{ ec2_region }}"
     vpc_id: "{{ create_vpc.vpc.id }}"
     tags:
-      provisioner: elisdondemo
+      provisioner: temporal
       application: "{{ application }}"
       demo: appdeployment
   register: igw
@@ -83,6 +83,6 @@
       - dest: 0.0.0.0/0
         gateway_id: "{{ igw.gateway_id }}"
     tags:
-      provisioner: elisdondemo
+      provisioner: temporal
       application: "{{ application }}"
       demo: appdeployment
