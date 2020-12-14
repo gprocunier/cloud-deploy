@@ -18,7 +18,7 @@
             region: "{{ ec2_region }}"
             filters:
               "tag:application": "{{ application }}"
-              "tag:provisioner": "elisdondemo"
+              "tag:provisioner": "temporal"
               instance-state-name: [ "running", "shutting-down", "stopping", "stopped" ]
           register: instance_info
 
@@ -61,7 +61,7 @@
             gcp_compute_instance_info:
               zone: "{{ gcp_zone }}"
               filters:
-              - labels.provisioner = elisdondemo
+              - labels.provisioner = temporal
               - labels.application = "{{ application }}"
               - labels.demo = appdeployment
             register: instance_info
