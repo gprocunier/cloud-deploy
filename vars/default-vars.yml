@@ -9,7 +9,7 @@ approver_email: temporal.network.demo@gmail.com
 
 #AWS parameters
 ec2_region: us-east-1
-ec2_prefix: elisdon-linux
+ec2_prefix: temporal-linux
 application: apache
 # machine_type: t2.medium
 # ec2_image_id: ami-02eac2c0129f6376b #Centos7
@@ -24,7 +24,7 @@ from_snow: false
 aws_instance_username: ec2-user
 
 #GCP parameters
-gcp_prefix: elisdon-linux
+gcp_prefix: temporal-linux
 gcp_region: us-central1
 gcp_zone: us-central1-a
 gcp_vpc_subnet: 192.168.0.0/28
