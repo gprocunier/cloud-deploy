@@ -1,7 +1,7 @@
 ---
 working_dir: /tmp
 ec2_region: ca-central-1
-ec2_prefix: elisdondemo
+ec2_prefix: temporal
 application: acloudguru
 # machine_type: t2.medium
 instance_size: micro
